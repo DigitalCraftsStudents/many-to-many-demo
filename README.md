@@ -48,3 +48,20 @@ npx sequelize model:generate --name Transaction --attributes 'amount:decimal, re
 npx sequelize model:generate --name Contact --attributes 'user_id:integer, contact_id:integer'
 npx sequelize model:generate --name Comment --attributes 'content:string, user_id:integer, transaction_id:integer'
 ```
+
+## Commands from the demo
+
+
+### Creating, running, and undoing a migration to add a column
+```sh
+  699  npx sequelize migration:create --name add-user-profile-pic
+  700  npx sequelize db:migrate
+  702  npx sequelize db:migrate:undo
+```
+
+### Creating and running a seed (to populate your database tables with placeholder data)
+
+```
+  708  npx sequelize seed:generate
+  709  npx sequelize seed:generate --name dummy-users
+```
